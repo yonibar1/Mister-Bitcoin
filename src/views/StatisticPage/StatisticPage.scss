@@ -1,0 +1,11 @@
+@import '../../assets/styles/setup/variables';
+.statistic-page {
+    padding: $main-padding;
+    svg{
+        width: 100%;
+        height: 400px;
+    }
+    hr{
+        color:$muted;
+    }
+}

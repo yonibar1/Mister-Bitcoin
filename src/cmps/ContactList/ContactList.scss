@@ -1,0 +1,18 @@
+@import '../../assets/styles/setup/variables';
+.contact-list{
+        padding:20px 0;
+        img{
+        padding-bottom:10px;
+        }
+        .contact-list-container {
+                list-style: none;
+                margin:0;
+                padding:0;
+                display: grid;
+                grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+                grid-gap: 30px;
+                a{
+                        text-decoration: none;
+                }
+        }
+}

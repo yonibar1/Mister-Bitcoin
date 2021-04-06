@@ -1,0 +1,43 @@
+@import '../../assets/styles/setup/variables';
+.contact-details {
+    padding: $main-padding;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .contact-details-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        img{
+            width: 300px;
+        }
+        >*:not(img){
+            margin:0;
+            padding:10px;
+            color:$muted;
+            span{
+                color:$black;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        }
+    }
+    .actions{
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+        width: 100%;
+        margin:20px 0;
+        button{
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

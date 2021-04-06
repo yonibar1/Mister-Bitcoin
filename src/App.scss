@@ -1,0 +1,33 @@
+@import './assets/styles/setup/variables';
+body{
+  margin:0;
+  button{
+    cursor: pointer;
+  }
+}
+.home-page{
+background-image: url('./assets/img/hero.jpg');
+background-size: cover;
+background-attachment: fixed;
+height: 90vh;
+padding:$main-padding;
+  .user-details{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      >*{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color:white;
+        margin:0;
+        padding:7px 0;
+        align-self: flex-start;
+      }
+      img{
+        width: 50px;
+        margin-right:8px;
+      }
+  }
+  
+}
