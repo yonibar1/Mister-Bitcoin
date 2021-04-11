@@ -23,7 +23,8 @@
             color: white;
             transition: .3s;
             &:hover{
-                background-color: $main-clr-dark;
+                // background-color: $main-clr-dark;
+                opacity: 75%;
             }
         }
     }
@@ -31,6 +32,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin:20px 0;
         button{
             border: none;
             outline: none;
@@ -38,7 +40,7 @@
             padding:5px;
             background-color: transparent;
             img{
-                width: 30px;
+                width: 40px;
             }
         }
     }

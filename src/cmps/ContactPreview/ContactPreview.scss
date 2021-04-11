@@ -11,7 +11,11 @@
     }
     img{
         width: 50px;
-        align-self: flex-start;
+        height: 50px;
+        border-radius: 50%;
+        padding-bottom: 0;
+        align-self: center;
+        margin-inline-end: 10px;
     }
     p.name{
         color:$main-clr-dark;

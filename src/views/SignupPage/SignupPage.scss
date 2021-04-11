@@ -1,0 +1,31 @@
+@import '../../assets/styles/setup/variables';
+.signup-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:100px;
+    form{
+        display: flex;
+        flex-direction: column;
+        input{
+            padding:8px 16px;
+        }
+        button{
+            cursor: pointer;
+            margin-top:15px;
+            padding:8px 16px;
+            align-self: center;
+            width: 50%;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            background-color: transparent;
+            background-color: $main-clr;
+            color: white;
+            &:hover{
+                opacity: 75%;
+            }
+        }
+    }
+}

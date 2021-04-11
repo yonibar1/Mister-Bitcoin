@@ -1,28 +1,25 @@
 import { Component } from 'react'
 import { ContactList } from '../../cmps/ContactList'
 import { ContactFilter } from '../../cmps/ContactFilter'
-import { ContactDetails } from '../ContactDetails/ContactDetails'
-import contactService from '../../services/contact.service'
+import { connect } from 'react-redux'
+import { loadContacts } from '../../store/actions/contactActions'
 import './ContactPage.scss'
-export class ContactPage extends Component {
-    state={
-        contacts:null,
-        filterBy:null,
-        contactId: null,
+class _ContactPage extends Component {
+    state = {
+        filterBy: null,
     }
     componentWillMount() {
-        this.loadContacts()    
+        this.loadContacts()
     }
-    onChangeFilter = (filterBy)=>{
-        this.setState({ filterBy }, () => this.loadContacts())
+    onChangeFilter = (filterBy) => {
+        this.setState({ filterBy }, () => this.loadContacts(this.state.filterBy))
     }
-    loadContacts = async () => {
-        const contacts = await contactService.getContacts(this.state.filterBy)
-        this.setState({ contacts })
+    loadContacts = async (filterBy) => {
+        await this.props.loadContacts(filterBy);
     }
-    
+
     render() {
-        const {contacts} = this.state
+        const { contacts } = this.props
         return (
             <div className="contact-page">
                 <ContactFilter onChangeFilter={this.onChangeFilter} />
@@ -31,3 +28,15 @@ export class ContactPage extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        contacts: state.contactReducer.contacts,
+    }
+}
+
+const mapDispatchToProps = {
+    loadContacts,
+}
+
+export const ContactPage = connect(mapStateToProps, mapDispatchToProps)(_ContactPage)
