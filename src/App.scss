@@ -6,15 +6,23 @@ body{
   }
 }
 .home-page{
-background-image: url('./assets/img/hero.jpg');
-background-size: cover;
-background-attachment: fixed;
-height: 90vh;
-padding:$main-padding;
+  background-image: url('./assets/img/hero.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 90vh;
+  padding:$main-padding;
+  justify-content: center;
+  display: flex;
   .user-details{
       display: flex;
       flex-direction: column;
       justify-content: center;
+      .move-list{
+        background-color:  rgba(255, 255, 255, 0.733);
+        color: $black;
+        box-shadow: 0 0 12px 1px rgba(255, 255, 255, 0.733);
+        // border: 1px solid $main-clr;
+      }
       >*{
         display: flex;
         align-items: center;

@@ -4,6 +4,7 @@
     img.contact-img{
         width: 200px;
         margin-bottom: 20px;
+        border-radius: 50%;
     }
     form{
         display: flex;
@@ -23,8 +24,8 @@
             color: white;
             transition: .3s;
             &:hover{
-                // background-color: $main-clr-dark;
-                opacity: 75%;
+                background-color: $main-clr-dark;
+                // opacity: 75%;
             }
         }
     }

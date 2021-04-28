@@ -2,9 +2,10 @@
 .contact-preview {
     padding:20px;
     display: flex;
+    transition: .3s;
     align-items: center;
     // max-width: 300px;
-    justify-content: center;
+    justify-content: space-evenly;
     border-radius: 10px;
     &:hover{
         box-shadow: 0 0 10px 0.5px rgba(207, 207, 207, 0.623);

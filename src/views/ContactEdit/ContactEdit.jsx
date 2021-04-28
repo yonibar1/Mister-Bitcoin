@@ -60,7 +60,7 @@ class _ContactEdit extends Component {
                     <button onClick={() => this.onBack()}><img src={back} alt="" /></button>
                     {contact._id && <button onClick={() => this.onRemoveContact()}><img src={remove} alt="" /></button>}
                 </div>
-                <img className="contact-img" src={`https://robohash.org/${contact._id}`} alt="" />
+                <img className="contact-img" src={`https://i.pravatar.cc/150?u=${contact._id}`} alt="" />
                 <form onSubmit={(ev) => this.saveContact(ev)}>
                     <label htmlFor="name">Name </label>
                     <input type="text" name="name" id="name" value={name} onChange={this.handleChange} />

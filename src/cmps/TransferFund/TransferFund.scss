@@ -24,7 +24,8 @@ button{
     color: white;
     transition: .3s;
     &:hover{
-        opacity: 75%;
+        // opacity: 75%;
+        background-color: $main-clr-dark;
     }
 }
 

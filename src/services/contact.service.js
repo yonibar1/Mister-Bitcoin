@@ -1,3 +1,5 @@
+import { httpService } from './http.service'
+const BASE_URL = 'contact/'
 export default {
     getContacts,
     getContactById,
@@ -143,50 +145,33 @@ function sort(arr) {
     })
 }
 
-function getContacts(filterBy = null) {
-    return new Promise((resolve, reject) => {
-        var contactsToReturn = contacts;
+async function getContacts(filterBy = null) {
+    try {
+        var contactsToReturn = await httpService.get(BASE_URL)
         if (filterBy && filterBy.term) {
             contactsToReturn = filter(filterBy.term)
         }
-        resolve(sort(contactsToReturn))
-    })
+        return sort(contactsToReturn)
+    } catch (err) {
+        console.log(err, 'Failed to get contacts');
+    }
 }
 
-function getContactById(id) {
-    return new Promise((resolve, reject) => {
-        const contact = contacts.find(contact => contact._id === id)
-        contact ? resolve(contact) : reject(`Contact id ${id} not found!`)
-    })
+async function getContactById(id) {
+    const contact = await httpService.get(BASE_URL + `/${id}`)
+    return contact
 }
 
-function deleteContact(id) {
-    return new Promise((resolve, reject) => {
-        const index = contacts.findIndex(contact => contact._id === id)
-        if (index !== -1) {
-            contacts.splice(index, 1)
-        }
-
-        resolve(contacts)
-    })
+async function deleteContact(id) {
+    return await httpService.delete(BASE_URL + `${id}`)
 }
 
-function _updateContact(contact) {
-    return new Promise((resolve, reject) => {
-        const index = contacts.findIndex(c => contact._id === c._id)
-        if (index !== -1) {
-            contacts[index] = contact
-        }
-        resolve(contact)
-    })
+async function _updateContact(contact) {
+    return await httpService.put(BASE_URL, contact)
 }
 
-function _addContact(contact) {
-    return new Promise((resolve, reject) => {
-        contact._id = _makeId()
-        contacts.push(contact)
-        resolve(contact)
-    })
+async function _addContact(contact) {
+    return await httpService.post(BASE_URL, contact)
 }
 
 function saveContact(contact) {
@@ -220,3 +205,5 @@ function _makeId(length = 10) {
     }
     return txt
 }
+
+

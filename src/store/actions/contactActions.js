@@ -13,7 +13,11 @@ export function loadContacts(filterBy) {
 }
 
 export function getContactById(contactId) {
-    return async dispatch => {
+    return async (dispatch, getState) => {
+        // const contacts = getState().contactReducer.contacts
+        // const contact = contacts.find(c => {
+        //     return c._id === contactId
+        // })
         const contact = await contactService.getContactById(contactId)
         dispatch({ type: 'SET_CONTACT', contact })
     }

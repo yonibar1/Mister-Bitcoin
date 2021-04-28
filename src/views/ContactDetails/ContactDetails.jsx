@@ -14,7 +14,6 @@ import './ContactDetails.scss'
 
 class _ContactDetails extends Component {
     state = {
-        // moves: null,
         moves: [],
     }
     async componentDidMount() {
