@@ -10,6 +10,7 @@ class _ContactPage extends Component {
     }
     componentWillMount() {
         this.loadContacts()
+        console.log(this.props.contacts);
     }
     onChangeFilter = (filterBy) => {
         this.setState({ filterBy }, () => this.loadContacts(this.state.filterBy))

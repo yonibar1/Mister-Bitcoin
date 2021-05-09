@@ -40,7 +40,7 @@ class _HomePage extends Component {
                     <h4><img src={defaultUser} alt="" />Hello {user.name}</h4>
                     <h4><img src={coins} alt="" /> Dollars: {this.coinsForDisplay} ({user.coins} BTC)</h4>
                     <h4><img src={bitcoin} alt="" />BTC: {bitcoinRate}</h4>
-                    {user.moves.length && <MoveList isHome={true} moves={user.moves.slice(0, 3)} />}
+                    {(user.moves.length && user.moves) && <MoveList isHome={true} moves={user.moves.slice(0, 3)} />}
                 </div>
             </div>
         )
